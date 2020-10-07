@@ -1,5 +1,5 @@
 # See https://www.docker.elastic.co/
-FROM docker.elastic.co/elasticsearch/elasticsearch:5.5.3
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.7.1
 
 RUN elasticsearch-plugin remove --purge x-pack \
  && elasticsearch-plugin install --batch analysis-icu \
