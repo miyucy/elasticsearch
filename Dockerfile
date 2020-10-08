@@ -1,7 +1,7 @@
 # See https://www.docker.elastic.co/
-FROM docker.elastic.co/elasticsearch/elasticsearch:7.7.1
+FROM docker.elastic.co/elasticsearch/elasticsearch-oss:7.7.1
 
-RUN elasticsearch-plugin remove --purge x-pack \
+RUN elasticsearch-plugin list \
  && elasticsearch-plugin install --batch analysis-icu \
  && elasticsearch-plugin install --batch analysis-kuromoji
 
