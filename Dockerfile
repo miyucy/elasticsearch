@@ -1,5 +1,5 @@
 # See https://www.docker.elastic.co/
-FROM docker.elastic.co/elasticsearch/elasticsearch-oss:7.7.1
+FROM docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6
 
 RUN elasticsearch-plugin list \
  && elasticsearch-plugin install --batch analysis-icu \
