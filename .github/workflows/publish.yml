@@ -32,5 +32,6 @@ jobs:
           }
           healthcheck $(docker run --detach --init --publish 9200:9200 "ghcr.io/${{ github.repository }}:${GITHUB_SHA}")
       - run: |
-          docker login -u "${{ github.actor }}" -p "${{ secrets.CONTAINER_REGISTRY_TOKEN }}" ghcr.io
+          echo "${{ secrets.CONTAINER_REGISTRY_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
           docker push "ghcr.io/${{ github.repository }}:${GITHUB_SHA}"
+
